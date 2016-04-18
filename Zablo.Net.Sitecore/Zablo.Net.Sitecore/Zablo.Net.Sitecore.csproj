@@ -43,39 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Client">
+      <HintPath>..\..\..\..\sc81rev151207\Website\bin\Sitecore.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.ExperienceEditor">
+      <HintPath>..\..\..\..\sc81rev151207\Website\bin\Sitecore.ExperienceEditor.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\..\..\sc81rev151207\Website\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Web">
+      <HintPath>..\..\..\..\sc81rev151207\Website\bin\Sitecore.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -94,25 +73,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Commands\DynamicFieldEditor.cs" />
+    <Compile Include="Pipelines\GetDynamicFieldEditor\Abstract\BaseDynamicFieldEditorProcessor.cs" />
+    <Compile Include="Pipelines\GetDynamicFieldEditor\Abstract\GetDynamicFieldEditorPipelineArgs.cs" />
+    <Compile Include="Pipelines\GetDynamicFieldEditor\Abstract\IGetDynamicFieldEditorProcessor.cs" />
+    <Compile Include="Pipelines\GetDynamicFieldEditor\SampleRenderingFieldProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Zablo.Net.Sitecore.config" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
